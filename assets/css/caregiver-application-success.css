@@ -1,0 +1,629 @@
+/*
+|--------------------------------------------------------------------------
+| SAFEHANDS
+| CAREGIVER APPLICATION SUCCESS
+|--------------------------------------------------------------------------
+| Same design system used by caregiver registration pages.
+|--------------------------------------------------------------------------
+*/
+
+@import url("caregiver-register.css");
+
+
+/* ==========================================================
+   COMPLETED PROGRESS
+========================================================== */
+
+.progress-step.completed .step-circle {
+    border-color: #004ac6;
+    background: #004ac6;
+    color: #ffffff;
+}
+
+
+.progress-step.completed .step-info small {
+    color: #004ac6;
+}
+
+
+.progress-step.completed .step-info strong {
+    color: #111c2d;
+}
+
+
+.completed-line {
+    background: #004ac6 !important;
+}
+
+
+/* ==========================================================
+   SUCCESS CARD
+========================================================== */
+
+.success-card {
+    margin-bottom: 20px;
+
+    padding:
+        38px
+        45px;
+
+    border:
+        1px solid
+        #e3e7ed;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 18px
+        rgba(16, 24, 40, 0.04);
+}
+
+
+/* ==========================================================
+   SUCCESS ICON
+========================================================== */
+
+.success-icon {
+    width: 68px;
+
+    height: 68px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin:
+        0
+        auto
+        17px;
+
+    border-radius: 50%;
+
+    background: #eaf7f2;
+
+    color: #08765e;
+}
+
+
+.success-icon svg {
+    width: 37px;
+
+    height: 37px;
+}
+
+
+/* ==========================================================
+   SUCCESS HEADING
+========================================================== */
+
+.success-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #004ac6;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.success-card h2 {
+    margin:
+        0
+        0
+        9px;
+
+    color: #111c2d;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+.success-description {
+    max-width: 600px;
+
+    margin:
+        0
+        auto
+        18px;
+
+    color: #7d8592;
+
+    font-size: 11px;
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   PENDING STATUS
+========================================================== */
+
+.status-badge {
+    width: fit-content;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 25px;
+
+    padding:
+        7px
+        13px;
+
+    border:
+        1px solid
+        #f2dfaa;
+
+    border-radius: 20px;
+
+    background: #fffaf0;
+
+    color: #806526;
+
+    font-size: 9px;
+
+    font-weight: 650;
+}
+
+
+.status-dot {
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #e6a700;
+}
+
+
+/* ==========================================================
+   REVIEW CARD
+========================================================== */
+
+.review-card {
+    max-width: 650px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1px
+        1fr;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin:
+        0
+        auto
+        15px;
+
+    padding:
+        19px
+        22px;
+
+    border:
+        1px solid
+        #e5e9ef;
+
+    border-radius: 9px;
+
+    background: #fafcff;
+
+    text-align: left;
+}
+
+
+.review-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.review-icon {
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #edf4ff;
+
+    color: #004ac6;
+}
+
+
+.review-icon svg {
+    width: 19px;
+
+    height: 19px;
+}
+
+
+.review-item small {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #9aa1ad;
+
+    font-size: 7px;
+
+    font-weight: 750;
+
+    letter-spacing: 0.7px;
+}
+
+
+.review-item strong {
+    color: #364152;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+
+.review-divider {
+    width: 1px;
+
+    height: 38px;
+
+    background: #e1e6ed;
+}
+
+
+/* ==========================================================
+   EMAIL NOTIFICATION
+========================================================== */
+
+.notification-note {
+    max-width: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin:
+        0
+        auto
+        23px;
+
+    padding:
+        11px
+        13px;
+
+    border:
+        1px solid
+        #e3e9f3;
+
+    border-radius: 8px;
+
+    background: #f7faff;
+
+    text-align: left;
+}
+
+
+.notification-icon {
+    width: 28px;
+
+    height: 28px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f0ff;
+
+    color: #004ac6;
+}
+
+
+.notification-icon svg {
+    width: 14px;
+
+    height: 14px;
+}
+
+
+.notification-note p {
+    margin: 0;
+
+    color: #737d8c;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   ACTION BUTTONS
+========================================================== */
+
+.success-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.success-login-button,
+.success-home-button {
+    min-width: 135px;
+
+    text-decoration: none;
+}
+
+
+.success-login-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+.success-home-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* ==========================================================
+   SUPPORT
+========================================================== */
+
+.support-text {
+    margin:
+        17px
+        0
+        0;
+
+    color: #8c939e;
+
+    font-size: 9px;
+}
+
+
+.support-text a {
+    color: #004ac6;
+
+    font-weight: 650;
+
+    text-decoration: none;
+}
+
+
+.support-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================================
+   WHAT HAPPENS NEXT
+========================================================== */
+
+.next-steps-card {
+    margin-bottom: 20px;
+
+    padding:
+        27px
+        30px;
+
+    border:
+        1px solid
+        #e3e7ed;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 4px 18px
+        rgba(16, 24, 40, 0.03);
+}
+
+
+.next-steps-card .section-heading {
+    margin-bottom: 21px;
+}
+
+
+.next-step-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 16px;
+}
+
+
+.next-step-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding:
+        14px
+        13px;
+
+    border:
+        1px solid
+        #e7ebf0;
+
+    border-radius: 8px;
+
+    background: #fafcff;
+}
+
+
+.next-step-number {
+    width: 25px;
+
+    height: 25px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f0ff;
+
+    color: #004ac6;
+
+    font-size: 9px;
+
+    font-weight: 750;
+}
+
+
+.next-step-item strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #3d4655;
+
+    font-size: 10px;
+
+    font-weight: 650;
+}
+
+
+.next-step-item p {
+    margin: 0;
+
+    color: #858d99;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 800px) {
+
+    .success-card {
+        padding:
+            32px
+            25px;
+    }
+
+
+    .next-step-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .success-card {
+        padding:
+            28px
+            18px;
+    }
+
+
+    .success-card h2 {
+        font-size: 19px;
+    }
+
+
+    .review-card {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .review-divider {
+        width: 100%;
+
+        height: 1px;
+    }
+
+
+    .success-actions {
+        flex-direction: column;
+    }
+
+
+    .success-login-button,
+    .success-home-button {
+        width: 100%;
+    }
+
+
+    .next-steps-card {
+        padding:
+            23px
+            18px;
+    }
+
+}

@@ -1,0 +1,609 @@
+/*
+|--------------------------------------------------------------------------
+| SAFEHANDS
+| CAREGIVER REGISTRATION - STEP 2
+|--------------------------------------------------------------------------
+| Reuse the EXACT design system from caregiver Step 1.
+|--------------------------------------------------------------------------
+*/
+
+@import url("caregiver-register.css");
+
+
+/* ==========================================================
+   STEP 1 COMPLETED STATE
+========================================================== */
+
+.progress-step.completed .step-circle {
+    border-color: #004ac6;
+
+    background: #004ac6;
+
+    color: #ffffff;
+}
+
+
+.progress-step.completed .step-info small {
+    color: #004ac6;
+}
+
+
+.progress-step.completed .step-info strong {
+    color: #111c2d;
+}
+
+
+.completed-line {
+    background: #004ac6 !important;
+}
+
+
+/* ==========================================================
+   SMALL FIELD HELP TEXT
+========================================================== */
+
+.field-help {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #999faa;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================================
+   DAILY RATE
+========================================================== */
+
+.rate-input-wrapper {
+    width: 100%;
+
+    height: 43px;
+
+    display: flex;
+    align-items: stretch;
+
+    overflow: hidden;
+
+    border: 1px solid #dfe4eb;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.rate-input-wrapper:focus-within {
+    border-color: #004ac6;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 74, 198, 0.07);
+}
+
+
+.currency-prefix {
+    width: 55px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-right: 1px solid #e4e8ee;
+
+    background: #f7f8fa;
+
+    color: #697386;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.rate-input-wrapper input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 100% !important;
+
+    padding: 0 12px !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+    background: #ffffff;
+}
+
+
+/* ==========================================================
+   BIOGRAPHY
+========================================================== */
+
+.biography-footer {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.character-counter {
+    flex-shrink: 0;
+
+    margin-top: 6px;
+
+    color: #999faa;
+
+    font-size: 9px;
+}
+
+
+/* ==========================================================
+   PROFILE PHOTO AREA
+========================================================== */
+
+.profile-photo-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+    padding: 25px;
+
+    border: 1px solid #e6eaf0;
+
+    border-radius: 10px;
+
+    background: #fafcff;
+}
+
+
+/* ==========================================================
+   PROFILE PHOTO PREVIEW
+========================================================== */
+
+.photo-preview-wrapper {
+    flex-shrink: 0;
+
+    padding: 4px;
+}
+
+
+.photo-preview {
+    position: relative;
+
+    width: 130px;
+
+    height: 130px;
+
+    border: 4px solid #ffffff;
+
+    border-radius: 50%;
+
+    background: #eef2f7;
+
+    box-shadow:
+        0 5px 18px
+        rgba(15, 23, 42, 0.11);
+}
+
+
+.photo-preview > img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+.photo-placeholder {
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef3f9,
+            #e5ebf4
+        );
+}
+
+
+.photo-placeholder svg {
+    width: 58px;
+
+    height: 58px;
+
+    color: #8795a9;
+}
+
+
+/* ==========================================================
+   CAMERA BADGE
+========================================================== */
+
+.photo-camera-badge {
+    position: absolute;
+
+    right: -1px;
+
+    bottom: 4px;
+
+    width: 35px;
+
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 3px solid #ffffff;
+
+    border-radius: 50%;
+
+    background: #004ac6;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 10px
+        rgba(0, 74, 198, 0.22);
+}
+
+
+.photo-camera-badge svg {
+    width: 15px;
+
+    height: 15px;
+}
+
+
+/* ==========================================================
+   PROFILE PHOTO CONTENT
+========================================================== */
+
+.photo-upload-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.photo-upload-content h3 {
+    margin: 0 0 6px;
+
+    color: #1a2332;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.photo-upload-content > p {
+    max-width: 590px;
+
+    margin: 0 0 14px;
+
+    color: #7d8592;
+
+    font-size: 11px;
+
+    line-height: 1.65;
+}
+
+
+/* ==========================================================
+   PHOTO REQUIREMENT POINTS
+========================================================== */
+
+.photo-points {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 17px;
+}
+
+
+.photo-points span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 5px 9px;
+
+    border: 1px solid #dbe6f8;
+
+    border-radius: 15px;
+
+    background: #f0f5ff;
+
+    color: #526d94;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+
+.photo-points b {
+    color: #004ac6;
+
+    font-size: 10px;
+}
+
+
+/* ==========================================================
+   HIDDEN FILE INPUT
+========================================================== */
+
+.profile-file-input {
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   PHOTO UPLOAD ROW
+========================================================== */
+
+.photo-upload-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+/* ==========================================================
+   CHOOSE PHOTO BUTTON
+========================================================== */
+
+.photo-select-button {
+    min-width: 105px;
+
+    height: 39px;
+
+    display: inline-flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 !important;
+
+    padding: 0 16px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #004ac6;
+
+    color: #ffffff !important;
+
+    font-size: 11px !important;
+
+    font-weight: 600 !important;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.photo-select-button:hover {
+    background: #003da5;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 10px
+        rgba(0, 74, 198, 0.16);
+}
+
+
+/* ==========================================================
+   FILE NAME
+========================================================== */
+
+.photo-file-name {
+    max-width: 280px;
+
+    overflow: hidden;
+
+    color: #7d8592;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.photo-format {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #9aa1ad;
+
+    font-size: 9px;
+}
+
+
+/* ==========================================================
+   PHOTO TIP
+========================================================== */
+
+.photo-tip-box {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin-top: 12px;
+
+    padding: 11px 13px;
+
+    border: 1px solid #e6eaf0;
+
+    border-radius: 8px;
+
+    background: #fafcff;
+}
+
+
+.photo-tip-icon {
+    width: 19px;
+
+    height: 19px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f0ff;
+
+    color: #004ac6;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.photo-tip-box p {
+    margin: 0;
+
+    color: #7d8592;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+.photo-tip-box strong {
+    color: #4d5665;
+}
+
+
+/* ==========================================================
+   RESPONSIVE - STEP 2 ONLY
+========================================================== */
+
+@media (max-width: 800px) {
+
+    .profile-photo-area {
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .photo-points {
+        justify-content: center;
+    }
+
+
+    .photo-upload-row {
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .profile-photo-area {
+        padding: 22px 16px;
+    }
+
+
+    .photo-upload-row {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .photo-file-name {
+        max-width: 230px;
+    }
+
+
+    .biography-footer {
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+}

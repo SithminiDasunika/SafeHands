@@ -1,0 +1,571 @@
+/*
+|--------------------------------------------------------------------------
+| SAFEHANDS
+| CAREGIVER REGISTRATION - STEP 3
+|--------------------------------------------------------------------------
+| Use the same design system as caregiver registration Step 1.
+|--------------------------------------------------------------------------
+*/
+
+@import url("caregiver-register.css");
+
+
+/* ==========================================================
+   COMPLETED PROGRESS STEPS
+========================================================== */
+
+.progress-step.completed .step-circle {
+    border-color: #004ac6;
+
+    background: #004ac6;
+
+    color: #ffffff;
+}
+
+
+.progress-step.completed .step-info small {
+    color: #004ac6;
+}
+
+
+.progress-step.completed .step-info strong {
+    color: #111c2d;
+}
+
+
+.completed-line {
+    background: #004ac6 !important;
+}
+
+
+/* ==========================================================
+   ERROR MESSAGE
+========================================================== */
+
+.message {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    margin:
+        22px
+        28px
+        0;
+
+    padding:
+        12px
+        14px;
+
+    border-radius: 8px;
+}
+
+
+.error-message {
+    border:
+        1px solid
+        #f1caca;
+
+    background: #fff7f7;
+}
+
+
+.message-icon {
+    width: 22px;
+
+    height: 22px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #d84a4a;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.message strong {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #333d4d;
+
+    font-size: 11px;
+}
+
+
+.message p {
+    margin: 0;
+
+    color: #737c8a;
+
+    font-size: 10px;
+}
+
+
+/* ==========================================================
+   DOCUMENT CATEGORY TITLE
+========================================================== */
+
+.document-category-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin:
+        0
+        0
+        15px;
+
+    padding-bottom: 9px;
+
+    border-bottom:
+        1px solid
+        #edf0f4;
+}
+
+
+.document-category-title span {
+    color: #596273;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.document-category-title small {
+    color: #e14b4b;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.document-category-title.optional-title small {
+    margin-left: auto;
+
+    padding:
+        3px
+        7px;
+
+    border-radius: 10px;
+
+    background: #f0f3f7;
+
+    color: #858d99;
+
+    font-size: 7px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ==========================================================
+   DOCUMENT GRID
+========================================================== */
+
+.document-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    column-gap: 24px;
+
+    row-gap: 21px;
+}
+
+
+.document-item {
+    min-width: 0;
+}
+
+
+.document-item > label:first-child {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #404858;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.required {
+    color: #e14b4b;
+}
+
+
+/* ==========================================================
+   HIDDEN DOCUMENT INPUT
+========================================================== */
+
+.document-file-input {
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   DOCUMENT UPLOAD BOX
+========================================================== */
+
+.document-upload-box {
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        13px
+        14px;
+
+    border:
+        1px solid
+        #dfe4eb;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.document-upload-box:hover {
+    border-color: #9ebbea;
+
+    background: #fbfdff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            0,
+            74,
+            198,
+            0.04
+        );
+}
+
+
+/* ==========================================================
+   DOCUMENT ICON
+========================================================== */
+
+.document-icon {
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #edf4ff;
+
+    color: #004ac6;
+}
+
+
+.document-icon svg {
+    width: 20px;
+
+    height: 20px;
+}
+
+
+/* ==========================================================
+   DOCUMENT INFORMATION
+========================================================== */
+
+.document-upload-info {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.document-upload-info strong {
+    overflow: hidden;
+
+    color: #364152;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.document-file-name {
+    max-width: 180px;
+
+    overflow: hidden;
+
+    color: #9299a5;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* ==========================================================
+   UPLOAD BUTTON INSIDE BOX
+========================================================== */
+
+.upload-button {
+    min-width: 78px;
+
+    height: 31px;
+
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        0
+        10px;
+
+    border:
+        1px solid
+        #d6e2f6;
+
+    border-radius: 6px;
+
+    background: #f3f7ff;
+
+    color: #004ac6;
+
+    font-size: 9px;
+
+    font-weight: 650;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.document-upload-box:hover
+.upload-button {
+    border-color: #bfd2f1;
+
+    background: #eaf2ff;
+}
+
+
+/* ==========================================================
+   DOCUMENT HELP TEXT
+========================================================== */
+
+.document-help {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #9aa1ad;
+
+    font-size: 8px;
+}
+
+
+/* ==========================================================
+   DECLARATION
+========================================================== */
+
+.declaration-box {
+    padding:
+        16px
+        17px;
+
+    border:
+        1px solid
+        #dfe6ef;
+
+    border-radius: 9px;
+
+    background: #fafcff;
+}
+
+
+.declaration-label {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    cursor: pointer;
+}
+
+
+.declaration-label input {
+    width: 16px;
+
+    height: 16px;
+
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    accent-color: #004ac6;
+
+    cursor: pointer;
+}
+
+
+.declaration-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.declaration-content strong {
+    color: #364152;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+
+.declaration-content > span {
+    max-width: 760px;
+
+    color: #7d8592;
+
+    font-size: 9px;
+
+    line-height: 1.65;
+}
+
+
+/* ==========================================================
+   SUBMIT APPLICATION BUTTON
+========================================================== */
+
+.submit-application-button {
+    min-width: 165px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (
+    max-width: 800px
+) {
+
+    .document-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (
+    max-width: 560px
+) {
+
+    .document-upload-box {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .document-upload-info {
+        width:
+            calc(
+                100% - 55px
+            );
+    }
+
+
+    .upload-button {
+        margin-left: 52px;
+    }
+
+
+    .document-file-name {
+        max-width: 200px;
+    }
+
+
+    .submit-application-button {
+        min-width: 150px;
+
+        padding:
+            0
+            13px;
+    }
+
+}
