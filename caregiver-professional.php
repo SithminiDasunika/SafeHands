@@ -1510,21 +1510,10 @@ $qualifications = [
                                 ): ?>
 
 
-                                    <img
-
-                                        src="<?=
-                                            htmlspecialchars(
-                                                $professionalData[
-                                                    "profile_photo"
-                                                ]
-                                            )
-                                        ?>"
-
-                                        alt="Caregiver profile photo"
-
-                                        id="previewImage"
-
-                                    >
+<img
+class="w-full h-full object-cover"
+src="<?= e($photo) ?>"
+alt="<?= e($fullName) ?>">
 
 
                                 <?php else: ?>

@@ -1,0 +1,172 @@
+name: Clinical Precision & Care
+colors:
+  surface: '#f9f9ff'
+  surface-dim: '#cfdaf2'
+  surface-bright: '#f9f9ff'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#f0f3ff'
+  surface-container: '#e7eeff'
+  surface-container-high: '#dee8ff'
+  surface-container-highest: '#d8e3fb'
+  on-surface: '#111c2d'
+  on-surface-variant: '#434655'
+  inverse-surface: '#263143'
+  inverse-on-surface: '#ecf1ff'
+  outline: '#737686'
+  outline-variant: '#c3c6d7'
+  surface-tint: '#0053db'
+  primary: '#004ac6'
+  on-primary: '#ffffff'
+  primary-container: '#2563eb'
+  on-primary-container: '#eeefff'
+  inverse-primary: '#b4c5ff'
+  secondary: '#375ca8'
+  on-secondary: '#ffffff'
+  secondary-container: '#8aacfe'
+  on-secondary-container: '#113e89'
+  tertiary: '#943700'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#bc4800'
+  on-tertiary-container: '#ffede6'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#dbe1ff'
+  primary-fixed-dim: '#b4c5ff'
+  on-primary-fixed: '#00174b'
+  on-primary-fixed-variant: '#003ea8'
+  secondary-fixed: '#d9e2ff'
+  secondary-fixed-dim: '#b0c6ff'
+  on-secondary-fixed: '#001945'
+  on-secondary-fixed-variant: '#1a438e'
+  tertiary-fixed: '#ffdbcd'
+  tertiary-fixed-dim: '#ffb596'
+  on-tertiary-fixed: '#360f00'
+  on-tertiary-fixed-variant: '#7d2d00'
+  background: '#f9f9ff'
+  on-background: '#111c2d'
+  surface-variant: '#d8e3fb'
+  surface-muted: '#F8FAFC'
+  border-subtle: '#F1F5F9'
+  status-success: '#025747'
+  status-warning: '#FEBB02'
+  status-info: '#AAECF3'
+typography:
+  display-lg:
+    fontFamily: Inter
+    fontSize: 48px
+    fontWeight: '700'
+    lineHeight: 56px
+    letterSpacing: -0.02em
+  headline-lg:
+    fontFamily: Inter
+    fontSize: 32px
+    fontWeight: '600'
+    lineHeight: 40px
+    letterSpacing: -0.01em
+  headline-lg-mobile:
+    fontFamily: Inter
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+  headline-md:
+    fontFamily: Inter
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+  body-lg:
+    fontFamily: Inter
+    fontSize: 18px
+    fontWeight: '400'
+    lineHeight: 28px
+  body-md:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 24px
+  label-md:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '500'
+    lineHeight: 20px
+    letterSpacing: 0.01em
+  label-sm:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: '600'
+    lineHeight: 16px
+    letterSpacing: 0.05em
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  base: 8px
+  container-max: 1280px
+  gutter: 24px
+  margin-desktop: 40px
+  margin-mobile: 16px
+---
+
+## Brand & Style
+
+This design system is engineered for a premium healthcare SaaS environment where trust, clarity, and professionalism are paramount. The aesthetic follows a **Modern Corporate/Minimalist** approach, stripping away unnecessary decorative elements to focus on utility and accessibility. 
+
+The target audience consists of healthcare administrators and professional caregivers who require a reliable, high-performance interface. The emotional response should be one of "Clinical Calm"—a sense of organized efficiency combined with high-end digital craftsmanship. By utilizing expansive whitespace, a disciplined color palette, and refined typography, the design system avoids the "clutter" often associated with medical software, instead offering a sophisticated experience reminiscent of modern fintech or luxury service platforms.
+
+## Colors
+
+The palette is anchored in a high-contrast foundation of **Pure White (#FFFFFF)** and **Dark Slate (#1E293B)** to ensure maximum legibility and a professional "paper" feel. 
+
+- **Primary Action:** A vibrant Blue (#2563EB) is used exclusively for primary calls-to-action and active states, signaling progression and modern tech-forwardness.
+- **Supportive Tones:** A Deep Navy (#003580) provides a traditional nod to healthcare stability, used for navigation or secondary emphasis.
+- **Functional Neutrals:** Light Slate and Gray tones handle the structural heavy lifting—dividers, disabled states, and subtle background layering—maintaining a clean hierarchy without visual noise.
+
+## Typography
+
+This design system utilizes **Inter** across all levels to leverage its exceptional legibility and systematic feel. The hierarchy is defined by tight tracking in headlines and generous line-heights in body copy to prevent "wall of text" fatigue in data-heavy screens.
+
+- **Headlines:** Bold and tight. Use `headline-lg` for primary page titles to establish immediate context.
+- **Body:** Open and airy. `body-md` is the workhorse for all patient notes and caregiver logs.
+- **Labels:** Slightly tighter and often semi-bolded, ensuring that metadata is easily scannable in dense dashboard environments.
+
+## Layout & Spacing
+
+The system employs a **Fixed-Fluid Hybrid Grid**. On desktop, content is constrained to a 1280px central container to prevent line-lengths from becoming unreadable on ultra-wide monitors. 
+
+- **Grid Model:** A 12-column system with 24px gutters.
+- **Rhythm:** An 8px base unit drives all padding and margin decisions. 
+- **Adaptation:**
+    - **Desktop:** Generous 40px outer margins to evoke a "premium" airy feel.
+    - **Tablet:** 8-column grid with 24px margins.
+    - **Mobile:** 4-column grid with 16px margins. Cards should typically span the full width of the mobile container to maximize touch targets.
+
+## Elevation & Depth
+
+Depth is achieved through **Tonal Layering** supplemented by **Ambient Shadows**. This approach minimizes visual "clutter" while still defining the interface's Z-axis.
+
+1.  **Level 0 (Base):** Pure White (#FFFFFF) background.
+2.  **Level 1 (Subtle Inset):** `surface-muted` (#F8FAFC) used for sidebars or background regions behind cards.
+3.  **Level 2 (Raised):** Cards and floating elements use a high-spread, low-opacity shadow (e.g., `box-shadow: 0 4px 6px -1px rgba(30, 41, 59, 0.05), 0 2px 4px -2px rgba(30, 41, 59, 0.05)`).
+4.  **Level 3 (Interactive/Overlays):** Modals and dropdowns feature a more pronounced "Floating" shadow with a 10% opacity tint of the Primary color to maintain brand cohesion.
+
+## Shapes
+
+The shape language is defined by **Soft Geometric Precision**. A consistent **12px (0.75rem) corner radius** is applied to primary UI components like cards, buttons, and input fields. This radius strikes a balance between the "friendliness" of rounded corners and the "authority" of straight lines. 
+
+- **Small elements (Checkboxes):** Use 4px radius.
+- **Large elements (Modals/Large Cards):** Use 16px (1rem) for a more distinct structural presence.
+- **Avatars:** Always circular to contrast against the geometric grid.
+
+## Components
+
+- **Buttons:** Primary buttons are solid Blue (#2563EB) with white text. Secondary buttons use a subtle gray stroke (`border-subtle`) with Dark Slate text. All buttons have a height of 44px or 48px to ensure accessibility for caregivers on the go.
+- **Cards:** White background with a 1px `border-subtle` and a Level 2 Ambient Shadow. Header sections within cards are separated by a 1px horizontal rule.
+- **Input Fields:** 12px rounded corners, 1px `border-subtle`. On focus, the border transitions to Primary Blue with a subtle 2px outer glow.
+- **Chips/Badges:** Used for status (e.g., "Verified," "Available"). These use a low-saturation background of the status color with high-saturation text (e.g., light green background with #025747 text).
+- **Caregiver Profile List:** A specialized component featuring a circular avatar, bold name title, and a "Skills" tag cloud. Use horizontal dividers between list items rather than individual cards to maintain a streamlined look.
+- **Empty States:** Instead of illustrations, use centered typography with a "Primary Action" button and a soft-tinted icon to maintain the professional aesthetic.

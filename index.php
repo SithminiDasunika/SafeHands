@@ -102,7 +102,7 @@ if ($role === 'Family' || $role === 'family') {
             </a>
 
             <a
-                href="#how-it-works"
+                href="find-caregiver.php"
                 class="nav-link"
             >
                 Find Caregivers
@@ -230,7 +230,7 @@ if ($role === 'Family' || $role === 'family') {
             <div class="hero-buttons">
 
                 <a
-                    href="#how-it-works"
+                    href="find-caregivers.php"
                     class="primary-button large-button"
                 >
                     Find a Caregiver

@@ -268,14 +268,12 @@ Dashboard
 Patients
 </a>
 
-
 <a
-    href="#"
+    href="/safehands/find-caregivers.php"
     class="font-medium text-sm text-on-surface-variant hover:text-primary transition-colors"
 >
-Find Caregivers
+    Find Caregivers
 </a>
-
 
 <a
     href="#"
@@ -432,8 +430,11 @@ calendar_today
 
 <!-- ADD PATIENT -->
 
+
+
 <div
     class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow cursor-pointer group"
+    onclick="window.location.href='../add-patient.php'"
 >
 
 <div
@@ -462,8 +463,10 @@ Register a new family member.
 <!-- FIND CAREGIVER -->
 
 <div
-    class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow cursor-pointer group"
->
+    class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow cursor-pointer group" 
+     onclick="window.location.href='../find-caregivers.php'"
+    >
+
 
 <div
     class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors"
@@ -1062,8 +1065,9 @@ Stable
 <button
     class="text-primary font-medium text-sm font-bold"
     type="button"
+    onclick="window.location.href='../patient-profile.php'"
 >
-View Patient
+    View Patient
 </button>
 
 </div>
