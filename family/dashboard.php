@@ -434,7 +434,7 @@ calendar_today
 
 <div
     class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow cursor-pointer group"
-    onclick="window.location.href='../add-patient.php'"
+    onclick="window.location.href='add-patient.php'"
 >
 
 <div
@@ -524,8 +524,9 @@ Manage your care sessions.
 <!-- NOTIFICATIONS -->
 
 <div
-    class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow cursor-pointer group"
->
+    class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow cursor-pointer group" 
+     onclick="window.location.href='../family-notification.php'"
+    >
 
 <div
     class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors"

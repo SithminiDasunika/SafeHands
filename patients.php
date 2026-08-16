@@ -113,10 +113,7 @@ $reports = [
                 <h1>My Patients</h1>
                 <p>View and manage the people you care for through SafeHands.</p>
             </div>
-            <button class="btn btn-primary" id="add-patient-btn">
-                <span class="material-symbols-outlined">add</span>
-                Add Patient
-            </button>
+            
         </div>
 
         <!-- Summary Stats Grid -->

@@ -1,3 +1,11 @@
+# macOS
+.DS_Store
+
+# Uploaded patient files
+uploads/
+
+# Logs
+*.log
 .DS_Store
 .vscode/
 node_modules/
