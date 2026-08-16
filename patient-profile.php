@@ -77,7 +77,7 @@
             <button
                 class="btn btn-secondary"
                 type="button"
-                onclick="window.location.href='edit-patient.php'">
+                onclick="window.location.href='patient-edit.php'">
                 Edit Profile
             </button>
 

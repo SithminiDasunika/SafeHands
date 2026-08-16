@@ -262,7 +262,7 @@ Dashboard
 
 
 <a
-    href="#"
+ href="../patients.php"
     class="font-medium text-sm text-on-surface-variant hover:text-primary transition-colors"
 >
 Patients
@@ -494,8 +494,9 @@ Search professional caregivers.
 <!-- MY BOOKINGS -->
 
 <div
-    class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow cursor-pointer group"
->
+    class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-shadow cursor-pointer group" 
+     onclick="window.location.href='../my-booking.php'"
+    >
 
 <div
     class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors"
@@ -547,6 +548,8 @@ Stay updated on reports.
 </p>
 
 </div>
+
+
 
 </div>
 

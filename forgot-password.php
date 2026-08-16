@@ -1,8 +1,26 @@
 <?php
 
 session_start();
-require 'includes/db.php';
 
+
+// Start a fresh password reset when the page is opened normally
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['step'])) {
+
+    unset(
+        $_SESSION['reset_user_id'],
+        $_SESSION['reset_email'],
+        $_SESSION['reset_first_name'],
+        $_SESSION['reset_id'],
+        $_SESSION['otp_verified'],
+        $_SESSION['reset_step']
+    );
+
+    $_SESSION['reset_step'] = 1;
+}
+
+
+require_once 'includes/db.php';
+require_once __DIR__ . '/includes/mail-config.php';
 $message = "";
 $messageType = "";
 
@@ -189,45 +207,51 @@ if (
 
                         if ($insertStmt->execute()) {
 
-                            /*
-                            |--------------------------------------------------------------------------
-                            | DEVELOPMENT ONLY
-                            |--------------------------------------------------------------------------
-                            | We temporarily display this OTP for testing.
-                            | Remove this after real email sending is connected.
-                            */
+                            // Send the OTP to the registered email address.
+                            if (!sendOTPEmail($user['email'], $otp)) {
 
-                            $_SESSION['dev_otp'] = $otp;
+                                // Email failed, remove the OTP just created.
+                                $newResetId = $insertStmt->insert_id;
 
-                            $_SESSION['reset_id'] =
-                                $insertStmt->insert_id;
+                                $cleanupStmt = $conn->prepare("
+                                    DELETE FROM password_resets
+                                    WHERE reset_id = ?
+                                    AND user_id = ?
+                                ");
 
-                            /*
-                            |--------------------------------------------------------------------------
-                            | Clear Previous Verification State
-                            |--------------------------------------------------------------------------
-                            */
+                                if ($cleanupStmt) {
+                                    $cleanupStmt->bind_param("ii", $newResetId, $userId);
+                                    $cleanupStmt->execute();
+                                    $cleanupStmt->close();
+                                }
 
-                            unset($_SESSION['otp_verified']);
+                                unset(
+                                    $_SESSION['reset_user_id'],
+                                    $_SESSION['reset_email'],
+                                    $_SESSION['reset_first_name'],
+                                    $_SESSION['reset_id'],
+                                    $_SESSION['otp_verified']
+                                );
 
-                            /*
-                            |--------------------------------------------------------------------------
-                            | Move to Step 2
-                            |--------------------------------------------------------------------------
-                            */
+                                $message = "We could not send the verification code to your email. Please try again.";
+                                $messageType = "error";
+                                $resetStep = 1;
 
-                            $_SESSION['reset_step'] = 2;
+                            } else {
 
-                            $resetStep = 2;
+                                $_SESSION['reset_id'] = $insertStmt->insert_id;
 
-                            $message = "";
-                            $messageType = "";
+                                unset($_SESSION['otp_verified']);
+
+                                $_SESSION['reset_step'] = 2;
+                                $resetStep = 2;
+                                $message = "";
+                                $messageType = "";
+                            }
 
                         } else {
 
-                            $message =
-                                "Unable to create verification code.";
-
+                            $message = "Unable to create verification code.";
                             $messageType = "error";
                             $resetStep = 1;
                         }
@@ -441,7 +465,6 @@ if (
 
                         $resetStep = 3;
 
-                        unset($_SESSION['dev_otp']);
 
                         $message = "";
                         $messageType = "";
@@ -800,8 +823,7 @@ if (
                                 $_SESSION['reset_email'],
                                 $_SESSION['reset_first_name'],
                                 $_SESSION['reset_id'],
-                                $_SESSION['otp_verified'],
-                                $_SESSION['dev_otp']
+                                $_SESSION['otp_verified']
                             );
 
                             /*
@@ -1285,39 +1307,6 @@ Enter the 6-digit verification code for
 </p>
 
 </div>
-
-
-<?php if (isset($_SESSION['dev_otp'])): ?>
-
-<div
-class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-xl text-center"
->
-
-<p
-class="text-xs font-bold text-yellow-800 mb-2"
->
-TEST OTP
-</p>
-
-
-<p
-class="text-3xl font-bold tracking-[0.35em] text-yellow-900"
->
-<?= htmlspecialchars($_SESSION['dev_otp']) ?>
-</p>
-
-
-<p
-class="text-xs text-yellow-700 mt-3"
->
-Temporary for local testing. We will remove this when real email delivery is connected.
-</p>
-
-</div>
-
-<?php endif; ?>
-
-
 <?php if (!empty($message)): ?>
 
 <div
