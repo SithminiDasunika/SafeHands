@@ -1,0 +1,1321 @@
+/* =========================================================
+   SAFEHANDS - PAYMENT HISTORY
+   Pure CSS
+   No Frameworks
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --primary: #004ac6;
+    --primary-container: #2563eb;
+
+    --background: #f9f9ff;
+
+    --surface: #ffffff;
+    --surface-low: #f0f3ff;
+    --surface-muted: #f8fafc;
+
+    --text: #111c2d;
+    --text-muted: #434655;
+
+    --border: #f1f5f9;
+    --outline: #c3c6d7;
+
+    --secondary: #375ca8;
+
+    --success: #025747;
+    --success-bg: #e6f4ea;
+
+    --warning: #b38300;
+    --warning-bg: #fff5d6;
+
+    --max-width: 1280px;
+
+    --desktop-margin: 40px;
+    --mobile-margin: 16px;
+
+    --radius: 12px;
+
+    --shadow:
+        0 4px 6px -1px rgba(30, 41, 59, 0.05),
+        0 2px 4px -2px rgba(30, 41, 59, 0.05);
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    line-height: 1.5;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+svg {
+
+    width: 20px;
+    height: 20px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.top-nav {
+
+    height: 64px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background: var(--surface);
+
+    border-bottom:
+        1px solid var(--border);
+
+    box-shadow:
+        0 1px 3px rgba(30, 41, 59, 0.04);
+}
+
+
+.nav-container {
+
+    max-width: var(--max-width);
+
+    height: 100%;
+
+    margin: auto;
+
+    padding:
+        0
+        var(--desktop-margin);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.nav-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+}
+
+
+.logo {
+
+    color: var(--primary);
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+
+.main-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+}
+
+
+.main-nav a {
+
+    color: var(--text-muted);
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    padding:
+        21px 0
+        17px;
+
+    transition: 0.2s ease;
+}
+
+
+.main-nav a:hover {
+
+    color: var(--primary);
+}
+
+
+.main-nav a.active {
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+    border-bottom:
+        2px solid var(--primary);
+}
+
+
+.nav-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.nav-icon {
+
+    display: flex;
+
+    color: var(--text-muted);
+}
+
+
+.nav-icon:hover {
+
+    color: var(--primary);
+}
+
+
+.sign-out {
+
+    color: var(--primary);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main-container {
+
+    width: 100%;
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding:
+        32px
+        var(--desktop-margin)
+        64px;
+
+    flex: 1;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+    margin-bottom: 28px;
+}
+
+
+.breadcrumb a:hover {
+
+    color: var(--primary);
+}
+
+
+.breadcrumb .current {
+
+    color: var(--text);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 42px;
+}
+
+
+.page-header h1 {
+
+    font-size: 32px;
+
+    line-height: 40px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.page-header p {
+
+    color: var(--text-muted);
+
+    font-size: 16px;
+}
+
+
+.payment-completed {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        7px
+        12px;
+
+    border-radius: 999px;
+
+    background: var(--success-bg);
+
+    color: var(--success);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+.payment-completed svg {
+
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =========================================================
+   TWO COLUMN
+========================================================= */
+
+.payment-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 2fr;
+
+    gap: 24px;
+
+    align-items: start;
+}
+
+
+.left-column,
+.right-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   CAREGIVER CARD
+========================================================= */
+
+.caregiver-card {
+
+    background: var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 24px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.caregiver-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.caregiver-image {
+
+    width: 64px;
+    height: 64px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    background: var(--surface-low);
+}
+
+
+.caregiver-header h2 {
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    margin-bottom: 4px;
+}
+
+
+.caregiver-rating {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+}
+
+
+.star {
+
+    color: #d69e00;
+
+    display: flex;
+}
+
+
+.star svg {
+
+    width: 16px;
+    height: 16px;
+
+    fill: currentColor;
+}
+
+
+.caregiver-card hr {
+
+    border: 0;
+
+    border-top:
+        1px solid var(--border);
+
+    margin:
+        20px 0;
+}
+
+
+.booking-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.detail-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+.detail-row span {
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+}
+
+
+.detail-row strong {
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-align: right;
+}
+
+
+.session-completed {
+
+    margin-top: 20px;
+
+    padding: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    background: var(--surface-muted);
+
+    border:
+        1px solid var(--success-bg);
+
+    border-radius: 8px;
+
+    color: var(--success);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.session-completed svg {
+
+    width: 18px;
+    height: 18px;
+}
+
+
+/* =========================================================
+   PAYMENT OVERVIEW
+========================================================= */
+
+.payment-overview {
+
+    background: var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    padding:
+        28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 32px;
+}
+
+
+.section-label {
+
+    display: block;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+
+    margin-bottom: 4px;
+}
+
+
+.total-price {
+
+    color: var(--text);
+
+    font-size: 42px;
+
+    line-height: 50px;
+
+    font-weight: 700;
+}
+
+
+.fee-details {
+
+    min-width: 210px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.fee-details > div {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.fee-details span {
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+}
+
+
+.fee-details strong {
+
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SMALL CARDS
+========================================================= */
+
+.two-small-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 24px;
+}
+
+
+.info-card {
+
+    background: var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 24px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.info-card h2 {
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+
+.transaction-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.transaction-id {
+
+    display: block;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    word-break: break-all;
+}
+
+
+.payment-method {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+
+.payment-method svg {
+
+    color: #737686;
+}
+
+
+/* =========================================================
+   ESCROW
+========================================================= */
+
+.escrow-card {
+
+    background: var(--surface-low);
+
+    border:
+        1px solid #dbe1ff;
+
+    border-radius: var(--radius);
+
+    padding: 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.escrow-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--primary);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.escrow-card p {
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+    line-height: 22px;
+}
+
+
+/* =========================================================
+   PAYMENT HISTORY
+========================================================= */
+
+.history-card {
+
+    background: var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+
+.history-header {
+
+    padding: 24px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.history-header h2 {
+
+    font-size: 21px;
+
+    font-weight: 600;
+}
+
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 600px;
+}
+
+
+thead {
+
+    background: var(--surface-muted);
+}
+
+
+th {
+
+    padding: 14px 16px;
+
+    text-align: left;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+td {
+
+    padding: 16px;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+tbody tr:last-child td {
+
+    border-bottom: 0;
+}
+
+
+tbody tr:hover {
+
+    background: var(--surface-muted);
+}
+
+
+.action-cell {
+
+    color: var(--text);
+
+    font-weight: 600;
+}
+
+
+.table-status {
+
+    display: inline-flex;
+
+    padding:
+        5px
+        9px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.table-status.authorized {
+
+    background: #dee8ff;
+
+    color: var(--text);
+}
+
+
+.table-status.escrow {
+
+    background: #dbe1ff;
+
+    color: #003ea8;
+}
+
+
+.table-status.completed {
+
+    background: var(--success-bg);
+
+    color: var(--success);
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.page-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 4px;
+}
+
+
+.back-button,
+.download-button {
+
+    min-height: 48px;
+
+    padding:
+        0
+        20px;
+
+    border-radius: 8px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.back-button {
+
+    background: white;
+
+    color: var(--text);
+
+    border:
+        1px solid var(--border);
+}
+
+
+.back-button:hover {
+
+    background: var(--surface-muted);
+}
+
+
+.download-button {
+
+    background: var(--primary);
+
+    color: white;
+
+    border:
+        1px solid var(--primary);
+
+    box-shadow:
+        0 4px 14px
+        rgba(0, 74, 198, 0.25);
+}
+
+
+.download-button:hover {
+
+    background: var(--primary-container);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    background: var(--surface-low);
+
+    border-top:
+        1px solid var(--border);
+
+    padding:
+        48px 0;
+
+    margin-top: auto;
+}
+
+
+.footer-container {
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding:
+        0
+        var(--desktop-margin);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 24px;
+}
+
+
+.footer-logo {
+
+    color: var(--secondary);
+
+    font-size: 22px;
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 24px;
+}
+
+
+.footer-links a {
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+}
+
+
+.footer-links a:hover {
+
+    color: var(--primary);
+
+    text-decoration: underline;
+}
+
+
+.footer-container p {
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .main-nav {
+        display: none;
+    }
+
+
+    .payment-layout {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .left-column {
+
+        order: 1;
+    }
+
+
+    .right-column {
+
+        order: 2;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .nav-container {
+
+        padding:
+            0
+            var(--mobile-margin);
+    }
+
+
+    .logo {
+
+        font-size: 22px;
+    }
+
+
+    .sign-out {
+
+        display: none;
+    }
+
+
+    .main-container {
+
+        padding:
+            24px
+            var(--mobile-margin)
+            48px;
+    }
+
+
+    .page-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        margin-bottom: 28px;
+    }
+
+
+    .page-header h1 {
+
+        font-size: 27px;
+
+        line-height: 35px;
+    }
+
+
+    .payment-overview {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .fee-details {
+
+        width: 100%;
+    }
+
+
+    .two-small-cards {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .page-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .back-button,
+    .download-button {
+
+        width: 100%;
+    }
+
+
+    .footer-container {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding:
+            0
+            var(--mobile-margin);
+    }
+
+
+    .footer-container p {
+
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .caregiver-header {
+
+        align-items: flex-start;
+    }
+
+
+    .caregiver-image {
+
+        width: 54px;
+        height: 54px;
+    }
+
+
+    .caregiver-header h2 {
+
+        font-size: 18px;
+    }
+
+
+    .detail-row {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 2px;
+    }
+
+
+    .detail-row strong {
+
+        text-align: left;
+    }
+
+
+    .total-price {
+
+        font-size: 34px;
+
+        line-height: 42px;
+    }
+
+}
